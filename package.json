@@ -1,0 +1,32 @@
+{
+    "name": "meower",
+    "version": "1.0.0",
+    "description": "In questa esercitazione sarà necessario creare un manifest per l'applicazione social felina meower.",
+    "source": "index.html",
+    "scripts": {
+        "start": "parcel",
+        "build": "parcel build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Redjaw/PWA_V.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Redjaw/PWA_V/issues"
+    },
+    "homepage": "https://github.com/Redjaw/PWA_V#readme",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "devDependencies": {
+        "@parcel/packager-raw-url": "^2.0.0",
+        "@parcel/transformer-webmanifest": "^2.0.0",
+        "parcel": "^2.0.0"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dexie": "^3.0.3",
+        "express": "^4.17.1",
+        "handlebars": "^4.7.7"
+    }
+}
