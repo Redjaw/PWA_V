@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Nentendo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel='stylesheet' href='node_modules/@fortawesome/fontawesome-free/css/all.css'>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsiveStyles.css"/>
+
+  
+</head>
+
+<body>
+  <div class="console">
+    <div class="logo">
+      <img src="./img/logo.png" width="200"/>
+    </div>
+    <div class="arrows">
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+    </div>
+    <div class="monitor">
+      <div class="power"></div>
+      <div class="screen">
+        <div class="header">DOT MATRIX WITH STEREO SOUND</div>
+        <div class="text-content">
+          <div class="loading">Loading</div>
+          <div class="games">
+            {{#if games}}
+              {{#each games}}
+              <div class="game">
+                <span><i class="fas fa-caret-right"></i>{{title}}</span>
+                <i class="fas {{icon}} fa-2x"></i>
+              </div>
+              {{/each}}
+            {{else}}
+              no games found
+            {{/if}}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="buttons"></div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type="module" src="./js/main.js"></script>
+
+  
+</body>
+</html>

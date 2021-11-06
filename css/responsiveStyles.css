@@ -1,0 +1,19 @@
+.console{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.monitor {
+    width: 100%;
+    margin: 0 10%;
+    margin-top: 20px;
+    order: 1;
+}
+
+.arrows{
+    order: 2;
+}
+
+.buttons {
+    order: 3;
+}
