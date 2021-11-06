@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Meower</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+  <!-- Custom css-->
+  <link rel="manifest" href="manifest.webmanifest"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  
+</head>
+
+<body>
+  <!-- Fixed top navbar -->
+<nav class="navbar navbar-toggleable-md fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse container">
+    <!-- Navbar navigation links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Meowments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="octicon octicon-bell"></i> Meowtifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="octicon octicon-inbox"></i> Meowsages</a>
+      </li>
+    </ul>
+    <!-- END: Navbar navigation links -->
+
+    <!-- Navbar Tweet button -->
+    <button class="btn btn-search-bar">Meow!</button>
+  </div>
+</nav>
+<!-- END: Fixed top navbar -->
+<div class="main-container">
+  <!-- Profile background large image -->
+  <div class="row profile-background">
+    <div class="container">
+	  <!-- User main avatar -->
+      <div class="avatar-container">
+        <div class="avatar">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar profile-stats">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+          <ul>
+            <li class="profile-stats-item-active">
+              <a>
+                <span class="profile-stats-item profile-stats-item-label">Meow</span>
+                <span class="profile-stats-item profile-stats-item-number">51</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="profile-stats-item profile-stats-item-label">Following</span>
+                <span class="profile-stats-item profile-stats-item-number">420</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="profile-stats-item profile-stats-item-label">Followers</span>
+                <span class="profile-stats-item profile-stats-item-number">583</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="profile-stats-item profile-stats-item-label">Paws</span>
+                <span class="profile-stats-item profile-stats-item-number">241</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg profile-col">
+        <!-- Left column -->
+        <div class="profile-header">
+          <!-- Header information -->
+          <h3 class="profile-fullname"><a>Avocato<a></h3>
+          <h2 class="profile-element"><a>@avocato</a></h2>
+          <a class="profile-element profile-website" hrerf=""><i class="octicon octicon-location"></i>Ventrexia City, Ventrexia</a>
+          <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
+          <!-- End: image grid -->
+        </div>
+      </div>
+      <!-- End; Left column -->
+      <!-- Center content column -->
+      <div class="col-12 col-md-8 col-lg-6">
+        <span id="loading">loading meows...</span>
+        <ol class="tweet-list mainTweetList">
+          {{#each posts}}
+          <li class="tweet-card">
+            <div class="tweet-content">
+              <div class="tweet-header">
+                <span class="fullname">
+                  <strong>{{author.name}}</strong>
+                </span>
+                <span class="username">{{author.username}}</span>
+                <span class="tweet-time">{{date}}</span>
+              </div>
+              <a>
+                <img class="tweet-card-avatar" src="./img/avatars/my-profile.png" alt="">
+              </a>
+              <div class="tweet-text">
+                <p class="" lang="es" data-aria-label-part="0">{{text}}</p>
+              </div>
+              <div class="tweet-footer">
+                <a class="tweet-footer-btn">
+                  <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
+                </a>
+                <a class="tweet-footer-btn">
+                  <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
+                </a>
+                <a class="tweet-footer-btn">
+                  <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
+                </a>
+                <a class="tweet-footer-btn">
+                  <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+        <!-- End: tweet list -->
+      </div>
+      <!-- End: Center content column -->
+      <div class="col right-col">
+        <div class="content-panel">
+          <div class="panel-header">
+            <h4>Who to sniff</h4><small><a href="">Refresh</a></small><small><a href="">View all</a></small>
+          </div>
+          <!-- Who to Follow panel -->
+          <div class="panel-content">
+            <!--Follow list -->
+            <ol class="tweet-list">
+              <li class="tweet-card">
+                <div class="tweet-content">
+                  <img class="tweet-card-avatar" src="https://cataas.com/c?width=47&type=sq" alt="">
+                  <div class="tweet-header">
+                    <span class="fullname">
+                  <strong>Jennifurr</strong>
+                </span>
+                    <span class="username">@jennifurr</span>
+                  </div>
+
+                  <button class="btn btn-follow">Follow</button>
+                </div>
+              </li>
+              <li class="tweet-card">
+                <div class="tweet-content">
+                  <img class="tweet-card-avatar" src="https://cataas.com/c?width=46&type=sq" alt="">
+                  <div class="tweet-header">
+                    <span class="fullname">
+                  <strong>Poppy Seed</strong>
+                </span>
+                    <span class="username">@poppyseed</span>
+                  </div>
+
+                  <button class="btn btn-follow">Follow</button>
+                </div>
+              </li>
+              <li class="tweet-card">
+                <div class="tweet-content">
+                  <img class="tweet-card-avatar" src="https://cataas.com/c?width=45&type=sq" alt="">
+                  <div class="tweet-header">
+                    <span class="fullname">
+                  <strong>Mungojerry</strong>
+                </span>
+                    <span class="username">@mungojerry</span>
+                  </div>
+
+                  <button class="btn btn-follow">Follow</button>
+                </div>
+              </li>
+            </ol>
+            <!--END: Follow list -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type="module" src="./js/main.js"></script>
+
+  
+</body>
+</html>
