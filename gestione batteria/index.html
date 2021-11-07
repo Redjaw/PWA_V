@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Gestione Batteria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+	
+	<p>Lo stato iniziale è <b id="charging">sconosciuto</b>, tempo di carica <b id="chargingTime">sconosciuto</b>, durata batteria <b id="dischargingTime">sconosciuto</b>, livello <b id="level">sconosciuto</b>.</p>
+	<div id="target"></div>
+	
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+if ('getBattery' in navigator || ('battery' in navigator && 'Promise' in window)) {
+
+  function handleChange(change) {
+    var timeBadge = new Date().toTimeString().split(' ')[0];
+    var newState = document.createElement('p');
+    newState.innerHTML = '' + timeBadge + ' ' + change + '.';
+    $('#target').html(newState);
+  }
+  
+  function onChargingChange() {
+    handleChange('Battery charging changed to ' + (this.charging ? 'charging' : 'discharging') + '')
+  }
+  function onChargingTimeChange() {
+    handleChange('Battery charging time changed to ' + this.chargingTime + ' s');
+  }
+  function onDischargingTimeChange() {
+    handleChange('Battery discharging time changed to ' + this.dischargingTime + ' s');
+  }
+  function onLevelChange() {
+    handleChange('Battery level changed to ' + this.level + '');
+  }
+
+  var batteryPromise;
+  
+  if ('getBattery' in navigator) {
+    batteryPromise = navigator.getBattery();
+  } else {
+    batteryPromise = Promise.resolve(navigator.battery);
+  }
+  
+  batteryPromise.then(function (battery) {
+    $('#charging').html(battery.charging ? 'charging' : 'discharging');
+    $('#chargingTime').html(battery.chargingTime + ' s');
+    $('#dischargingTime').html(battery.dischargingTime + ' s');
+    $('#level').html(battery.level);
+    
+    battery.addEventListener('chargingchange', onChargingChange);
+    battery.addEventListener('chargingtimechange', onChargingTimeChange);
+    battery.addEventListener('dischargingtimechange', onDischargingTimeChange);
+    battery.addEventListener('levelchange', onLevelChange);
+    });
+}
+  </script>
+</body>
+</html>

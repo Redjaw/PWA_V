@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Gestione Bluetooth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+	
+	<button id="bluetooth">Leggi la batteria disponibile sul dispositivo bluetooth collegato</button>
+
+	<p id="target"></p>
+	
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+	$('#bluetooth').click(()=>{
+		if (!('bluetooth' in navigator)) {
+			$('#target').html('Bluetooth API not supported.');
+			return;
+		  }
+	  
+	  navigator.bluetooth.requestDevice({
+		  filters: [{
+			services: ['battery_service']
+		  }]
+		})
+		.then(function (device) {
+		  return device.gatt.connect();
+		})
+		.then(function (server) {
+		  return server.getPrimaryService('battery_service');
+		})
+		.then(function (service) {
+		  return service.getCharacteristic('battery_level');
+		})
+		.then(function (characteristic) {
+		  return characteristic.readValue();
+		})
+		.then(function (value) {
+		  $('#target').html('La percentuale di batteria è: ' + value.getUint8(0) + '.');
+		})
+		.catch(function (error) {
+		  $('#target').html(error.toString());
+		});
+	})
+	  
+  </script>
+</body>
+</html>

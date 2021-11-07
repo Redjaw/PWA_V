@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocalization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+	
+	<button id="askButton">Chiedi la posizione</button>
+	<div id="target"></div>
+	
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+	var watchId;
+
+function appendLocation(location, verb) {
+  verb = verb || 'updated';
+  var newLocation = document.createElement('p');
+  newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+  $('#target').html(newLocation);
+}
+
+if ('geolocation' in navigator) {
+  $('#askButton').click(() => {
+    navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation(location, 'fetched');
+    });
+    watchId = navigator.geolocation.watchPosition(appendLocation);
+  });
+} else {
+  $('#target').html('Geolocation API not supported.');
+}
+  </script>
+</body>
+</html>

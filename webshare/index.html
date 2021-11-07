@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>web share API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+	
+	<button id="button">SHARE</button>
+	
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+	  const shareData = {
+	  title: 'MDN',
+	  text: 'Learn web development on MDN!',
+	  url: 'https://developer.mozilla.org'
+	}
+
+	// Share must be triggered by "user activation"
+	$('#button').click( async () => {
+	  try {
+		await navigator.share(shareData)
+		resultPara.textContent = 'MDN shared successfully'
+	  } catch(err) {
+		resultPara.textContent = 'Error: ' + err
+	  }
+	});
+  </script>
+</body>
+</html>
