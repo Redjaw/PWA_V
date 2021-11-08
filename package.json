@@ -1,0 +1,22 @@
+{
+  "name": "pwa_v",
+  "version": "1.0.0",
+  "description": "Questa esercitazione richiede l'utilizzo delle metodologie viste nel corso per rendere la pagina index.html responsive.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redjaw/PWA_V.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Redjaw/PWA_V/issues"
+  },
+  "homepage": "https://github.com/Redjaw/PWA_V#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
+}

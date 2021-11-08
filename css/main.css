@@ -25,6 +25,9 @@ p{
     line-height: 1.5rem;
 }
 
+.toggleMenu {
+    display: none;
+}
 .container {
     margin: 20px 200px;
 }
@@ -61,16 +64,17 @@ p{
 
 .navbar input {
     width: 400px;
+    transition: all .3s ease-in;
 }
 
 .content {
     margin-top: 20px;
-    display: grid;
-    grid-template: auto / 80% 20%;
+    display: flex;
 }
 
 .content .posts {
     margin-right: 20px;
+    flex: 1;
 }
 
 .content .post {
@@ -86,6 +90,7 @@ p{
 }
 
 .sidenav {
+    width: 200px;
     display: flex;
     flex-direction: column;
 }
@@ -111,4 +116,81 @@ p{
     height: 40px;
     border-bottom: 1px solid #ccc;
     line-height: 40px;
+}
+
+.sidenav .sidelinks li .fab{
+    display: none;
+}
+
+@media screen and (max-width:1199px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h3 {
+        display: none;
+    }
+    .container {
+        margin: 20px 5%;
+    }
+    .navbar li {
+        padding:10px 10px;
+    }
+    .navbar li a {
+        font-size: .9rem;
+    }
+    .navbar input {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .container {
+        margin-top: 60px;
+    }
+    .advertising {
+        display: none;
+    }
+    .content {
+        flex-wrap: wrap-reverse;
+    }
+    .content .posts {
+        margin: 0;
+    }
+    .sidenav {
+        width: 100%;
+    }
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+    .navbar ul {
+        display: none;
+    }
+    .toggleMenu {
+        display: block;
+    }
+    .sidenav .sidelinks {
+        background: none;
+    }
+    .sidenav .sidelinks li{
+        border: none;
+        cursor: pointer;
+    }
+    .sidenav .sidelinks li a {
+        display: none;
+    }
+    .sidenav .sidelinks ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .sidenav .sidelinks li .fab {
+        display: block;
+        padding: 16px;
+    }
 }
