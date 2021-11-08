@@ -1,0 +1,40 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "author": {
+                "name": "Avocato",
+                "username": "@avocato"
+            },
+            "date": "Jul 18 - 08:00",
+            "text": "My dad is a joy, and I want to fly away. I'm depending on hand crafted fluff, so say we all. #grimgold #randomtweet"
+        },
+        {
+            "id": 2,
+            "author": {
+                "name": "Avocato",
+                "username": "@avocato"
+            },
+            "date": "Jul 18 - 08:00",
+            "text": "My sister is very timely, and I want to do stand-up comedy. It's the casual TV shows, for real. #nogold#randomtweet"
+        },
+        {
+            "id": 3,
+            "author": {
+                "name": "Avocato",
+                "username": "@avocato"
+            },
+            "date": "Jul 18 - 08:00",
+            "text": "My life is glorious, and I want to acquire new skills. Ridiculously miniscule rope, bro. #yolomacaroni"
+        },
+        {
+            "id": 4,
+            "author": {
+                "name": "Avocato",
+                "username": "@avocato"
+            },
+            "date": "Jul 18 - 08:00",
+            "text": "My ninja training is fantastic, and I want to get ahead. Unlikely hot free lunches, in a way. #holynews"
+        }
+    ]
+}
