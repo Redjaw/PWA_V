@@ -1,4 +1,25 @@
-import Handlebars from "handlebars"
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('../sw.js').then(function (registration) {
+        return registration.sync.register('myFirstSync');
+
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+function sendMessage(){
+ navigator.serviceWorker.controller.postMessage({
+     type: 'MESSAGE_IDENTIFIER',
+     data: "test"
+ });
+}
+    
 
 function renderPosts(posts) {
     $('#loading').hide();
@@ -21,4 +42,3 @@ function getPosts() {
     })
 }
 
-getPosts()
