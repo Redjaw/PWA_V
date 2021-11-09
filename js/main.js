@@ -1,16 +1,23 @@
-import Handlebars from "handlebars"
 
 $('.games').hide()
+let gamesList;
 
 function renderGames(games) {
     $('.loading').hide();
-    var template = $('.games').html();
-    var templateScript = Handlebars.compile(template);
 
-    var context = games;
-    var html = templateScript({ games: context });
-
-    $('.games').html(html);
+    var list = "";
+        for(let i=0; i<games.length; i++){
+        list += `<div class="game" index="${i}">
+                    <span><i class="fas fa-caret-right"></i>${games[i].title}</span>
+                    <i class="${games[i].icon} fa-2x"></i>
+                </div>`
+        }
+    $(".games").append(list);
+    $(".game").each(function(){
+        $(this).click(function(){
+            $(".games").html(`<img src="${gamesList[$(this).attr('index')].img}" />`)
+        })
+    })
     $('.games').show();
 }
 
@@ -19,6 +26,7 @@ function getGames() {
     .then((response) => response.json())
     .then(data => {
         renderGames(data)
+        gamesList = data
     })
     .catch(error=>{
         renderGames([])

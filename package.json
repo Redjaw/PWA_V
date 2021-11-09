@@ -3,10 +3,6 @@
     "version": "1.0.0",
     "description": "La migliore console del web",
     "source": "index.html",
-    "scripts": {
-        "start": "parcel",
-        "build": "parcel build"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Redjaw/PWA_V.git"

@@ -2,13 +2,21 @@
     "games": [
         {
             "id": 1,
-            "title":"super davide bros",
-            "icon":"fa-save"
+            "title":"super bario bros",
+            "icon":"fas fa-star",
+            "img":"./img/games/superbario.png"
         },
         {
             "id": 2,
-            "title":"super davide bros2",
-            "icon":"fa-save"
+            "title":"the legend of jolda",
+            "icon":"fas fa-shield-alt",
+            "img":"./img/games/jolda.png"
+        },
+        {
+            "id": 3,
+            "title":"gioshi's island",
+            "icon":"fas fa-egg",
+            "img":"./img/games/gioshi.png"
         }
     ]
 }
