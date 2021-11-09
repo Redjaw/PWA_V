@@ -27,6 +27,7 @@
         "cors": "^2.8.5",
         "dexie": "^3.0.3",
         "express": "^4.17.1",
-        "handlebars": "^4.7.7"
+        "handlebars": "^4.7.7",
+        "localforage": "^1.10.0"
     }
 }

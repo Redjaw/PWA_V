@@ -1,4 +1,21 @@
 import Handlebars from "handlebars"
+import Dexie from "dexie";
+import localforage from "localforage";
+
+localforage.setItem('test','ciao')
+
+var db = new Dexie("MyDexieDatabase");
+db.version(1).stores({
+    dexieposts: "id",
+});
+
+async function getData() {
+    var items =  await db.dexieposts.toArray()
+    if (items.length > 0) {
+        renderPosts(items)
+    }else getPosts()
+}
+getData()
 
 function renderPosts(posts) {
     $('#loading').hide();
@@ -17,8 +34,11 @@ function getPosts() {
     .then(data => {
         
         renderPosts(data)
+        localforage.setItem('posts',data)
+        db.dexieposts.bulkAdd(data)
+       
 
     })
 }
 
-getPosts()
+

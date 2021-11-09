@@ -35,6 +35,15 @@
             },
             "date": "Jul 18 - 08:00",
             "text": "My ninja training is fantastic, and I want to get ahead. Unlikely hot free lunches, in a way. #holynews"
+        },
+        {
+            "id": 5,
+            "author": {
+                "name": "Davide",
+                "username": "@avocato"
+            },
+            "date": "Jul 18 - 08:00",
+            "text": "My ninja training is fantastic, and I want to get ahead. Unlikely hot free lunches, in a way. #holynews"
         }
     ]
 }
