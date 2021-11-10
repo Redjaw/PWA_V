@@ -10,11 +10,13 @@
     order: 1;
 }
 
-.arrows{
+.arrows_container {
+    display: flex;
+    justify-content: center;
     order: 2;
 }
 
-.buttons {
+.buttons_container {
     order: 3;
 }
 
@@ -27,4 +29,33 @@
     margin: -4px;
     width: calc(100% + 8px);
     height: 100%;
+}
+
+@media screen and (min-width:800px) and (max-height: 600px){
+    .arrows_container {
+        order: 1;
+        flex: 1;
+    }
+    .monitor{
+        order: 2;
+        flex: 2;
+        max-width: 600px;
+    }
+    .buttons_container {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .console {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .console {
+        width: 40%;
+        margin: 0 auto;
+    }
 }
