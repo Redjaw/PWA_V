@@ -14,15 +14,10 @@
     },
     "homepage": "https://github.com/Redjaw/PWA_V#readme",
     "browserslist": "> 0.5%, last 2 versions, not dead",
-    "devDependencies": {
-        "@parcel/packager-raw-url": "^2.0.0",
-        "@parcel/transformer-webmanifest": "^2.0.0",
-        "parcel": "^2.0.0"
-    },
+    "devDependencies": {},
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "handlebars": "^4.7.7"
+        "express": "^4.17.1"
     }
 }
